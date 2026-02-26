@@ -1,0 +1,24 @@
+_target_: networks.action_generator.mdt.MDT
+_recursive_: false
+
+sigma_data: ${method.sigma_data}
+
+obs_seq_len: ${manager.obs_window}
+action_dim: ${manager.action_dim}
+proprio_dim: 0 # set during runtime
+img_dim: ${method.vision_encoder.output_dim}
+graph_dim: ${method.graph_encoder.output_dim}
+goal_dim: 512
+img_mod: ${manager.image_modalities}
+graph_mod: ${manager.graph_modalities}
+use_graph_fusion: ${manager.use_graph_fusion}
+embed_dim: 512
+embed_pdrob: 0.1
+attn_pdrop: 0.3
+resid_pdrop: 0.1
+mlp_pdrop: 0.1
+n_dec_layers: 6
+n_enc_layers: 4
+n_heads: 16
+bias: false
+use_noise_encoder: False

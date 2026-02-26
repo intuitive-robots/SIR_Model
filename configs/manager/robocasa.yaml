@@ -1,0 +1,35 @@
+_target_: manager.robocasa_manager.RoboCasa_Manager
+_recursive_: false
+
+data_path: "TODO"
+load_dataset: True
+
+batch_size: 16 # For single tasks 16, for ALL 512 (or lower)
+train_per: 0.95
+num_workers: 0 # keep it zero, only increase if you read through https://github.com/pytorch/pytorch/issues/13246#issuecomment-905703662
+
+obs_window: 1
+act_window: 10
+action_dim: 12
+times_repeat: 5
+
+task_names: ["CloseDrawer"] # Either ALL       Drawer: OpenDrawer, CloseDrawer
+                            # or list of       Doors: CloseDoubleDoor, CloseSingleDoor, OpenDoubleDoor, OpenSingleDoor
+                            # tasks            Microwave: TurnOffMicrowave, TurnOnMicrowave
+                            #                  Sink: TurnOnSinkFaucet, TurnOffSinkFaucet, TurnSinkSpout
+                            #                  Stove: TurnOnStove, TurnOffStove
+                            #                  Coffee: CoffeePressButton, CoffeeServeMug, CoffeeSetupMug
+                            #                  PnP: PnPCabToCounter, PnPCounterToCab, PnPCounterToMicrowave, PnPCounterToSink, 
+                            #                  PnPCounterToStove, PnPMicrowaveToCounter, PnPSinkToCounter, PnPStoveToCounter
+
+# State-Based Modalities
+prop_modalities: [] #["robot0_gripper_qpos", "robot0_joint_pos", "robot0_eef_pos", "robot0_eef_quat" "robot0_base_pos", "robot0_base_quat", "object"]
+
+# Image-Based Modality
+image_modalities: [] #["inhand", "left", "right"]
+
+# Graph-Based Modality
+graph_modalities: ["one_hot_labels", "bb_coordinates"] #["one_hot_labels", "bb_coordinates", "cropped_image_feature"]
+pretrained_img_encoder_name: "cropped_image_feature_encoder_fusion_dim_37" # cropped_image_feature_encoder_dim_256, cropped_image_feature_encoder_dim_37
+use_graph_fusion: True
+use_splitted_modalities: False

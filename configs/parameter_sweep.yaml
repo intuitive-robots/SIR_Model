@@ -1,0 +1,18 @@
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - ${args_no_hyphens}
+method: grid
+project: robocasa_eval_new
+metric:
+  goal: maximize
+  name: Avg_Test_Reward
+name: epoch_and_learn_rate
+parameters:
+  method.optimization.lr:
+    values: [1e-4, 5e-4, 1e-3]
+  trainer.epochs:
+    values: [50, 100]
+
+program: main.py

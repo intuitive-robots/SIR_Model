@@ -1,0 +1,35 @@
+_target_: method.diffusion.Diffusion
+_recursive_: false
+
+defaults:
+  - action_generator: mdt
+  - vision_encoder: cnn
+  - graph_encoder: gnn
+
+optimization:
+  _target_: torch.optim.AdamW
+  lr: 1e-4
+  betas: [0.9, 0.999]
+  weight_decay: 1e-3
+
+lr_scheduler:
+  _target_: method.utils.WarmupSequentialLRScheduler
+  epochs: ${trainer.epochs}
+  warmup_ratio: 0.05
+  step_ratio: 0.1
+  gamma: 0.5
+  start_factor: 0.1
+
+device: ${trainer.device}
+
+act_window_size: ${manager.act_window}
+obs_window_size: ${manager.obs_window}
+action_dim: ${manager.action_dim}
+
+sampler_type: 'ddim'
+num_sampling_steps: 10 # sampling steps for denoising
+noise_scheduler: 'exponential'
+sigma_data: 0.5
+sigma_min: 0.001 # noise value when denoising last step
+sigma_max: 80 # noise value when denoising first step
+sigma_sample_density_type: 'loglogistic'

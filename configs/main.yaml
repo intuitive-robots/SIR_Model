@@ -1,0 +1,28 @@
+defaults:
+  - manager: robocasa
+  - method: diffusion
+
+hydra:
+  run:
+    dir: ${trainer.log_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${trainer.log_dir}/sweeps/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.override_dirname}
+
+wandb:
+  entity: TODO # rename to own username
+  project: robocasa # rename to project (if project does not exist in wandb, will create it)
+  run_name: "test"
+
+trainer:
+  device: 'cuda'
+  seed: 42
+  epochs: 50
+  train_bool: True # if false, will only test model on environment
+  test_during_training_bool: False # tests the model every epoch
+  test_bool: True # if false, will not test the model after training
+  eval_n_times: 20 # number of random scenarios
+  store_videos: True
+  use_ema: False
+  log_dir: "TODO/logs/${wandb.project}"
+  model_path: "TODO"
