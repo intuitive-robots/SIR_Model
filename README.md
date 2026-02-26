@@ -1,5 +1,5 @@
 # SIR: Structured Image Representations for Explainable Robot Learning
-[Paper](), [Project Page](https://intuitive-robots.github.io/SIR_website/), [CVPR 2026]()
+[Paper](https://paulmattes.github.io/publication/conference-paper/), [Project Page](https://intuitive-robots.github.io/SIR_website/), [CVPR 2026]()
 
 [Paul Mattes](https://paulmattes.github.io/)<sup>1</sup>,
 Jan Schwab,
@@ -12,7 +12,7 @@ Moritz Haberland and
 
 <sup>1</sup>Intuitive Robots Lab, Karlsruhe Institute of Technology
 
-This is the official code repository for the paper [SIR: Structured Image Representations for Explainable Robot Learning]().
+This is the official code repository for the paper [SIR: Structured Image Representations for Explainable Robot Learning](https://paulmattes.github.io/publication/conference-paper/).
 
 ## Installation
 
