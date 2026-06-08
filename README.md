@@ -103,7 +103,7 @@ Additionally, you need to add the following code below every `self.model.merge_o
 self.model.mujoco_objects.append(model)
 ```
 
-# Datasets (TBD)
+# Datasets
 
-The graph datasets for RoboCasa will be uploaded to HuggingFace in the upcoming days.
+The graph datasets for RoboCasa are uploaded to HuggingFace.
 https://huggingface.co/datasets/MrLayen/SIR_robocasa
