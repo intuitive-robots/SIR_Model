@@ -1,5 +1,5 @@
 # SIR: Structured Image Representations for Explainable Robot Learning
-[Paper](https://paulmattes.github.io/publication/conference-paper/), [Project Page](https://intuitive-robots.github.io/SIR_website/), [CVPR 2026]()
+[Paper](https://openaccess.thecvf.com/content/CVPR2026/html/Mattes_SIR_Structured_Image_Representations_for_Explainable_Robot_Learning_CVPR_2026_paper.html), [Project Page](https://intuitive-robots.github.io/SIR_website/), [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Mattes_SIR_Structured_Image_Representations_for_Explainable_Robot_Learning_CVPR_2026_paper.html)
 
 [Paul Mattes](https://paulmattes.github.io/)<sup>1</sup>,
 Jan Schwab,
@@ -107,3 +107,16 @@ self.model.mujoco_objects.append(model)
 
 The graph datasets for RoboCasa are uploaded to HuggingFace.
 https://huggingface.co/datasets/MrLayen/SIR_robocasa
+
+# Citation
+
+```
+@InProceedings{Mattes_2026_CVPR,
+    author    = {Mattes, Paul and Schwab, Jan and Bosch, Jens and Li, Maximilian Xiling and Blank, Nils and Tang, Minh-Trung and Haberland, Moritz and Lioutikov, Rudolf},
+    title     = {SIR: Structured Image Representations for Explainable Robot Learning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {42484-42493}
+}
+```
